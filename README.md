@@ -10,8 +10,8 @@ handwriting is never uploaded.
 | Model | Parameters | File | Status | Release |
 |---|---:|---:|---|---|
 | **Tiny** | 6.5 M | 6.8 MB | Available (also built into the app) | [`tiny-v1`](../../releases/tag/tiny-v1) |
-| **Small** | 20 M | about 21 MB | Training | coming |
-| **Medium** | 38 M | about 39 MB | Planned | coming |
+| **Small** | 20 M | 20.6 MB | Available | [`small-v1`](../../releases/tag/small-v1) |
+| **Medium** | 38 M | about 39 MB | Training | coming |
 | **Large** | 60 M | about 60 MB | Planned | coming |
 
 Larger models read more accurately but take longer on the phone. Each release holds the model file (`<name>.bin`) and
@@ -26,6 +26,7 @@ unsure. "Same result" counts a reading as right when it calculates to the same v
 | Model | MathWriting test, calculator-like (222) | MathWriting valid, calculator-like (397) | Composed calculator expressions (2,000) |
 |---|---:|---:|---:|
 | Tiny | 76.1 % | 76.3 % | 88.1 % |
+| Small | 78.4 % | 81.1 % | 89.7 % |
 
 - **MathWriting sets:** expressions written by people that use only calculator notation. Per MathWriting's own notes,
   its validation and test sets are only partly by writers absent from training.
@@ -44,8 +45,8 @@ All models share one design:
 | Model | Decoder | Encoder (DenseNet) | Training |
 |---|---|---|---|
 | Tiny | 3 layers, width 256, 8 heads, feed-forward 1024 | growth 24, 16 layers per block | 8 epochs |
-| Small (training) | 6 layers, width 384, 8 heads, feed-forward 1536 | growth 32, 16 layers per block | 8 epochs, in progress |
-| Medium (planned) | 6 layers, width 512, 8 heads, feed-forward 2048 | growth 40, 20 layers per block | 8 epochs, not started |
+| Small | 6 layers, width 384, 8 heads, feed-forward 1536 | growth 32, 16 layers per block | 8 epochs; the last three checkpoints averaged |
+| Medium (training) | 6 layers, width 512, 8 heads, feed-forward 2048 | growth 40, 20 layers per block | 8 epochs, in progress |
 
 They are trained (or will be) on the same data:
 - MathWriting's human-written training set;
@@ -79,3 +80,4 @@ The models are trained with data from:
 | Tag | File | Bytes | SHA-256 |
 |---|---|---:|---|
 | `tiny-v1` | `tiny.bin` | 6,754,555 | `629ef469da4b4a65ce1ba630f1d6cef067446f3bd4986f7713e3dbd1a962b265` |
+| `small-v1` | `small.bin` | 20,583,451 | `64bc34ae95f0330a178f52039cfaa0636d7787c1d2b8ec4ae25446d3bf9e61c7` |
