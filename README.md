@@ -44,10 +44,10 @@ All models share one design:
 | Model | Decoder | Encoder (DenseNet) | Training |
 |---|---|---|---|
 | Tiny | 3 layers, width 256, 8 heads, feed-forward 1024 | growth 24, 16 layers per block | 8 epochs |
-| Small | 6 layers, width 384, 8 heads, feed-forward 1536 | growth 32, 16 layers per block | 8 epochs |
-| Medium | 6 layers, width 512, 8 heads, feed-forward 2048 | growth 40, 20 layers per block | 8 epochs |
+| Small (training) | 6 layers, width 384, 8 heads, feed-forward 1536 | growth 32, 16 layers per block | 8 epochs, in progress |
+| Medium (planned) | 6 layers, width 512, 8 heads, feed-forward 2048 | growth 40, 20 layers per block | 8 epochs, not started |
 
-They are trained on the same data:
+They are trained (or will be) on the same data:
 - MathWriting's human-written training set;
 - MathWriting's synthetic set;
 - calculator expressions composed from single handwritten symbols (see Credits).
