@@ -1,0 +1,2 @@
+# Model files are release assets, not part of the repository.
+*.bin
